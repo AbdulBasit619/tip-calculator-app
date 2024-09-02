@@ -19,5 +19,7 @@
 /node_modules
 /design/css/style.prefix.css
 /design/css/style.comp.css
+/design/css/style.comp.css.map
+/design/css/style.css.map
 style-guide.md
 /design/*.jpg

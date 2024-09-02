@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.heading__input {
+  font-size: 1.6rem;
+
+  &--people {
+    text-align: left;
+    justify-self: flex-start;
+  }
+}
+
+.message--error {
+  color: $color--error;
+  font-size: 1.6rem;
+  align-self: center;
+  justify-self: flex-end;
+}

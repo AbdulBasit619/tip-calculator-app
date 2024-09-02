@@ -1,0 +1,317 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+body {
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 2.4rem;
+  color: hsl(186, 14%, 43%);
+  font-weight: 700;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: hsl(185, 41%, 84%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8.6rem;
+}
+@media only screen and (max-width: 800px) {
+  .container {
+    height: fit-content;
+    padding: 4.8rem;
+  }
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 500px) {
+  .attribution {
+    font-size: 1.6rem;
+  }
+}
+
+.heading__input {
+  font-size: 1.6rem;
+}
+.heading__input--people {
+  text-align: left;
+  justify-self: flex-start;
+}
+
+.message--error {
+  color: hsl(0, 100%, 67%);
+  font-size: 1.6rem;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+input {
+  font-family: inherit;
+  text-align: right;
+  font-size: inherit;
+  font-weight: 700;
+  background: none;
+  border: none;
+  outline: none;
+  color: hsl(183, 100%, 15%);
+}
+input::placeholder {
+  color: hsl(184, 14%, 56%);
+}
+
+.bill__container,
+.people__container {
+  background-color: hsl(189, 41%, 97%);
+  padding: 1rem 1.6rem;
+  border-radius: 3px;
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 100%);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hidden {
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
+/* Hide spin box in Chrome, Safari, and Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spin box in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Optional: Hide spin box in Internet Explorer */
+input[type=number] {
+  -ms-appearance: none;
+}
+
+.card {
+  background-color: hsl(0, 0%, 100%);
+  padding: 4rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 3rem;
+}
+@media only screen and (max-width: 800px) {
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.card__input {
+  width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3rem;
+}
+@media only screen and (max-width: 500px) {
+  .card__input {
+    width: 32rem;
+  }
+}
+.card__input--bill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.card__input--bill input {
+  width: 36rem;
+}
+@media only screen and (max-width: 500px) {
+  .card__input--bill input {
+    width: 100%;
+  }
+}
+.card__input--tips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+.card__input--tips .tips__container {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+@media only screen and (max-width: 500px) {
+  .card__input--tips .tips__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card__input--tips .tips__container input {
+  background: none;
+  outline: none;
+  border: none;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(189, 41%, 97%);
+  padding: 0.6rem 0;
+  text-align: center;
+  border-radius: 4px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.card__input--tips .tips__container .btn__value {
+  cursor: pointer;
+}
+.card__input--tips .tips__container .btn__value:hover, .card__input--tips .tips__container .btn__value:active, .card__input--tips .tips__container .btn__value:focus {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
+.card__input--tips .tips__container .btn__custom {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  text-align: right;
+  padding: 0.4rem;
+  caret-color: hsl(172, 67%, 45%);
+  border: 2px solid;
+  border-color: none;
+}
+.card__input--tips .tips__container .btn__custom::placeholder {
+  text-align: center;
+  color: hsl(186, 14%, 43%);
+}
+.card__input--tips .tips__container .btn__custom:active, .card__input--tips .tips__container .btn__custom:focus {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.card__input--people {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  row-gap: 0.6rem;
+}
+.card__input--people input {
+  width: 36rem;
+}
+@media only screen and (max-width: 500px) {
+  .card__input--people input {
+    width: 100%;
+  }
+}
+.card__input--people .people__container {
+  grid-column: 1/-1;
+}
+.card__output {
+  width: 40rem;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 12px;
+  padding: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 500px) {
+  .card__output {
+    width: 32rem;
+    gap: 3rem;
+  }
+}
+.card__output--result {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.card__output--result .output {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card__output--result .output__caption {
+  font-size: 1.5rem;
+}
+.card__output--result .output__caption--heading {
+  color: hsl(0, 0%, 100%);
+}
+.card__output--result .output__caption--subheading {
+  font-size: 1.2rem;
+}
+.card__output--result .output__price {
+  font-size: 4.8rem;
+  color: hsl(172, 67%, 45%);
+}
+@media only screen and (max-width: 500px) {
+  .card__output--result .output__price {
+    font-size: 3rem;
+  }
+}
+.card__output .reset {
+  width: 100%;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  text-align: center;
+  font-size: 1.8rem;
+  border-radius: 4px;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.card__output .reset:disabled {
+  opacity: 0.15;
+  filter: brightness(1.5) blur(0.8px);
+}
+.card__output .reset:hover, .card__output .reset:active, .card__output .reset:focus {
+  background-color: hsl(185, 41%, 84%);
+}
+
+/*# sourceMappingURL=style.css.map */

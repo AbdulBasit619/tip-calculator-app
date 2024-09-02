@@ -1,0 +1,199 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.card {
+  background-color: $color--white;
+  padding: 4rem;
+  border-radius: 10px;
+
+  @include flexCenter(row);
+  gap: 3rem;
+
+  @media only screen and (max-width: 800px) {
+    @include flexCenter(column);
+  }
+
+  &__input {
+    width: 40rem;
+
+    @include flexCenter;
+    align-items: stretch;
+    gap: 3rem;
+
+    @media only screen and (max-width: 500px) {
+      width: 32rem;
+    }
+
+    &--bill {
+      @include flexCenter;
+      align-items: flex-start;
+      gap: 0.6rem;
+
+      input {
+        width: 36rem;
+
+        @media only screen and (max-width: 500px) {
+          width: 100%;
+        }
+      }
+
+      .bill__container {
+      }
+    }
+
+    &--tips {
+      @include flexCenter;
+      gap: 1.6rem;
+      align-items: flex-start;
+
+      .tips__container {
+        width: 100%;
+
+        @include grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+
+        @media only screen and (max-width: 500px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        input {
+          background: none;
+          outline: none;
+          border: none;
+          background-color: $color--very_dark_cyan;
+          color: $color--very_light_grayish_cyan;
+          padding: 0.6rem 0;
+          text-align: center;
+          border-radius: 4px;
+          width: 100%;
+          transition: all 0.3s;
+        }
+
+        .btn__value {
+          cursor: pointer;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $color--light_grayish_cyan;
+            color: $color--very_dark_cyan;
+          }
+        }
+
+        .btn__custom {
+          background-color: $color--very_light_grayish_cyan;
+          color: $color--very_dark_cyan;
+          text-align: right;
+          padding: 0.4rem;
+          caret-color: $color--strong_cyan;
+          border: 2px solid;
+          border-color: none;
+
+          &::placeholder {
+            text-align: center;
+            color: $color--dark_grayish_cyan;
+          }
+
+          &:active,
+          &:focus {
+            border: 2px solid $color--strong_cyan;
+          }
+        }
+      }
+    }
+
+    &--people {
+      @include grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-start;
+      row-gap: 0.6rem;
+
+      input {
+        width: 36rem;
+
+        @media only screen and (max-width: 500px) {
+          width: 100%;
+        }
+      }
+
+      .people__container {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__output {
+    width: 40rem;
+    background-color: $color--very_dark_cyan;
+    border-radius: 12px;
+    padding: 3rem;
+    height: 100%;
+
+    @include flexCenter;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 500px) {
+      width: 32rem;
+      gap: 3rem;
+    }
+
+    &--result {
+      width: 100%;
+
+      @include flexCenter;
+      gap: 2.4rem;
+
+      .output {
+        width: 100%;
+
+        @include flexCenter(row);
+        justify-content: space-between;
+
+        &__caption {
+          font-size: 1.5rem;
+
+          &--heading {
+            color: $color--white;
+          }
+
+          &--subheading {
+            font-size: 1.2rem;
+          }
+        }
+
+        &__price {
+          font-size: 4.8rem;
+          color: $color--strong_cyan;
+
+          @media only screen and (max-width: 500px) {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    .reset {
+      width: 100%;
+      background-color: $color--strong_cyan;
+      color: $color--very_dark_cyan;
+      text-align: center;
+      font-size: 1.8rem;
+      border-radius: 4px;
+      padding: 1rem 0;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:disabled {
+        opacity: 0.15;
+        filter: brightness(1.5) blur(0.8px);
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $color--light_grayish_cyan;
+      }
+    }
+  }
+}

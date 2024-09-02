@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./design/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./images/logo.svg" alt="Logo" class="logo" />
+      <div class="card">
+        <div class="card__input">
+          <div class="card__input--bill">
+            <label for="bill" class="heading__input heading__input--bill"
+              >Bill</label
+            >
+            <div class="bill__container">
+              <img src="./images/icon-dollar.svg" alt="Icon Dollar" />
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                name="bill"
+                id="bill"
+                placeholder="0"
+              />
+            </div>
+          </div>
+          <div class="card__input--tips">
+            <label class="heading__input heading__input--tips">
+              Select Tip %</label
+            >
+            <div class="tips__container">
+              <input type="button" class="input__tip btn__value" value="5%" />
+              <input type="button" class="input__tip btn__value" value="10%" />
+              <input type="button" class="input__tip btn__value" value="15%" />
+              <input type="button" class="input__tip btn__value" value="25%" />
+              <input type="button" class="input__tip btn__value" value="50%" />
+              <input
+                type="number"
+                min="0"
+                class="input__custom btn__custom"
+                placeholder="Custom"
+                step="0.1"
+                pattern="/\d*/"
+              />
+            </div>
+          </div>
+          <div class="card__input--people">
+            <label for="people" class="heading__input heading__input--people"
+              >Number of People</label
+            >
+            <p class="message--error hidden">Can't be zero</p>
+            <div class="people__container">
+              <img src="./images/icon-person.svg" alt="Icon Person" />
+              <input
+                type="number"
+                name="people"
+                id="people"
+                min="1"
+                step="1"
+                placeholder="0"
+                pattern="\d*"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card__output">
+          <div class="card__output--result">
+            <div class="output">
+              <div class="output__caption">
+                <p class="output__caption--heading">Tip Amount</p>
+                <span class="output__caption--subheading">/ person</span>
+              </div>
+              <h3 class="output__price output__price--tip">
+                &dollar;<span class="tip_per_person">0.00</span>
+              </h3>
+            </div>
+            <div class="output">
+              <div class="output__caption">
+                <p class="output__caption--heading">Total</p>
+                <span class="output__caption--subheading">/ person</span>
+              </div>
+              <h3 class="output__price output__price--total">
+                &dollar;<span class="total_bill">0.00</span>
+              </h3>
+            </div>
+          </div>
+          <input type="reset" class="reset" disabled value="RESET" />
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.github.com/abdulbasit619" target="_blank"
+        >Abdul Basit</a
+      >.
+    </div>
+
+    <script src="./design/js/script.js"></script>
+  </body>
+</html>

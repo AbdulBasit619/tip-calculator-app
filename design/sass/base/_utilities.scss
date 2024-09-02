@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+input {
+  font-family: inherit;
+  text-align: right;
+  font-size: inherit;
+  font-weight: $fw--bold;
+  background: none;
+  border: none;
+  outline: none;
+  color: $color--very_dark_cyan;
+
+  &::placeholder {
+    color: $color--grayish_cyan;
+  }
+}
+
+.bill__container,
+.people__container {
+  background-color: $color--very_light_grayish_cyan;
+  padding: 1rem 1.6rem;
+  border-radius: 3px;
+  width: 100%;
+  border: 1px solid $color--white;
+  transition: all 0.3s;
+
+  @include flexCenter(row);
+  justify-content: space-between;
+}
+
+.hidden {
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
+/* Hide spin box in Chrome, Safari, and Edge */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spin box in Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Optional: Hide spin box in Internet Explorer */
+input[type='number'] {
+  -ms-appearance: none;
+}
